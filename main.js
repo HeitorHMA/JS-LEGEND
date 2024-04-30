@@ -55,19 +55,48 @@ function characterCreation(){
     userNameButton.addEventListener("click",function(){
         const userName = userNameInput.value;
         gameContent.innerHTML = "";
-        chooseYourClass();
+        chooseYourClass(userName);
     });
     gameContent.appendChild(userNameButton);
 }
 
 //Choose your Class Page//
 
-function chooseYourClass(){
+function chooseYourClass(userName){
     const gameContent = document.querySelector("#gameContent");
-    gameContent.classList.add("main-menu")
+    gameContent.classList.add("main-menu");
+
+    const classTitle = document.createElement("h1");
+    classTitle.innerHTML = `${userName} , what will be your class ? `;
+    classTitle.classList.add("class-choosing-title");
+    gameContent.appendChild(classTitle);
+
 
     const classChoosingDiv = document.createElement("div");
+    classChoosingDiv.classList.add("class-choosing-div");
+
     const warriorClass = document.createElement ("img");
-    warriorClass.src("")
+    warriorClass.src = '/imgs/warriorClass.jpeg';
+    warriorClass.style.height = '100px';
+    warriorClass.style.width = '100px';
+
+    const mageClass = document.createElement ("img");
+    mageClass.src = '/imgs/mageClass.jpeg';
+    mageClass.style.height = '100px';
+    mageClass.style.width = '100px';
+
+
+    const assasinClass = document.createElement ("img");
+    assasinClass.src = '/imgs/assasinClass.jpg';
+    assasinClass.style.height = '100px';
+    assasinClass.style.width = '100px';
+
+
+    classChoosingDiv.appendChild(warriorClass);
+
+    classChoosingDiv.appendChild(mageClass);
+
+    classChoosingDiv.appendChild(assasinClass);
+
     gameContent.appendChild(classChoosingDiv);
 }
