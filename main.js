@@ -53,16 +53,16 @@ function characterCreation(){
     const userNameButtonPlaceholder = document.createTextNode("Create Character");
     userNameButton.appendChild(userNameButtonPlaceholder);
     userNameButton.addEventListener("click",function(){
-        const userName = userNameInput.value;
+        userName = userNameInput.value;
         gameContent.innerHTML = "";
-        chooseYourClass(userName);
+        chooseYourClass();
     });
     gameContent.appendChild(userNameButton);
 }
 
 //Choose your Class Page//
 
-function chooseYourClass(userName){
+function chooseYourClass(){
     const gameContent = document.querySelector("#gameContent");
     gameContent.classList.add("main-menu");
 
@@ -77,19 +77,30 @@ function chooseYourClass(userName){
 
     const warriorClass = document.createElement ("img");
     warriorClass.src = '/imgs/warriorClass.jpeg';
-    warriorClass.style.height = '100px';
-    warriorClass.style.width = '100px';
+    warriorClass.style.height = '150px';
+    warriorClass.style.width = '150px';
+    warriorClass.addEventListener("click",function(){
+        userClass = warrior;
+        gameContent.innerHTML = "";
+        checkUserInfo();
+    });
 
     const mageClass = document.createElement ("img");
     mageClass.src = '/imgs/mageClass.jpeg';
-    mageClass.style.height = '100px';
-    mageClass.style.width = '100px';
+    mageClass.style.height = '150px';
+    mageClass.style.width = '150px';
+    mageClass.addEventListener("click",function(){
+        userClass = mage;
+    });
 
 
     const assasinClass = document.createElement ("img");
     assasinClass.src = '/imgs/assasinClass.jpg';
-    assasinClass.style.height = '100px';
-    assasinClass.style.width = '100px';
+    assasinClass.style.height = '150px';
+    assasinClass.style.width = '150px';
+    assasinClass.addEventListener("click",function(){
+        userClass = assasin;
+    });
 
 
     classChoosingDiv.appendChild(warriorClass);
@@ -100,3 +111,23 @@ function chooseYourClass(userName){
 
     gameContent.appendChild(classChoosingDiv);
 }
+// Choose Atributes //
+
+
+// Check user Info //
+ 
+function checkUserInfo(){
+
+}
+
+
+//Universal Information //
+
+let userName;
+let userClass;
+let userLevel = 0;
+let userCON;
+let userSTR;
+let userAGL;
+let userDEX;
+let userINT;
