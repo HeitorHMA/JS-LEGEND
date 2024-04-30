@@ -1,0 +1,46 @@
+*{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main-menu{
+    display:grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.main-menu-title{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.new-game-button{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border: 1px solid black;
+}
+.continue-button{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    border: 1px solid black;
+}
+.exit-button{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    border: 1px solid black;
+}
