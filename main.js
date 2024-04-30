@@ -1,3 +1,13 @@
+//Universal Information //
+let userName;
+let userClass;
+let userLevel = 0;
+let userCON;
+let userSTR;
+let userAGL;
+let userDEX;
+let userINT;
+
 //Main Menu Function//
 
 function mainMenu(){
@@ -80,7 +90,8 @@ function chooseYourClass(){
     warriorClass.style.height = '150px';
     warriorClass.style.width = '150px';
     warriorClass.addEventListener("click",function(){
-        userClass = warrior;
+        userClass = "Warrior";
+        console.log(userClass);
         gameContent.innerHTML = "";
         checkUserInfo();
     });
@@ -117,17 +128,41 @@ function chooseYourClass(){
 // Check user Info //
  
 function checkUserInfo(){
+    const gameContent = document.querySelector("#gameContent");
+    gameContent.classList.add("main-menu");
+
+    const infoQuestion = document.createElement("h1");
+    infoQuestion.classList.add("info-question");
+    infoQuestion.innerHTML = `
+    Your name is: ${userName} <br>
+    Your class is: ${userClass} <br>
+    Is it right ? <br>`;
+    gameContent.appendChild(infoQuestion);
+
+    const continueButton = document.createElement("button");
+    const continueButtonPlaceholder = document.createTextNode("Yes");
+    continueButton.appendChild(continueButtonPlaceholder);
+    continueButton.addEventListener("click",function(){
+        gameContent.innerHTML = "";
+        const memeText = document.createElement("h1");
+        memeText.innerHTML = "Jõao não terminou ainda kkkkk";
+        gameContent.appendChild(memeText);
+    })
+    gameContent.appendChild(continueButton);
+
+    const resetButton = document.createElement("button");
+    const resetButtonPlaceholder = document.createTextNode("No");
+    resetButton.appendChild(resetButtonPlaceholder);
+    resetButton.addEventListener("click",function(){
+        gameContent.innerHTML = "";
+        characterCreation();
+    })
+    gameContent.appendChild(resetButton);
+
+
 
 }
 
 
-//Universal Information //
 
-let userName;
-let userClass;
-let userLevel = 0;
-let userCON;
-let userSTR;
-let userAGL;
-let userDEX;
-let userINT;
+
